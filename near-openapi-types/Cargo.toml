@@ -1,7 +1,7 @@
 [package]
 name = "near-openapi-types"
 version.workspace = true
-edition.workspace = true
+edition = "2024"
 license.workspace = true
 repository.workspace = true
 description = "Types for progenitor-generated client of NEAR JSON RPC API"

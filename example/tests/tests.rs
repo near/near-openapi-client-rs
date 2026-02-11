@@ -1,10 +1,10 @@
-use client::types::CryptoHash;
 use client::Client;
+use client::types::CryptoHash;
 use near_crypto::{InMemorySigner, Signer};
 use near_openapi_client as client;
 use near_primitives::transaction::{Action, Transaction, TransactionV0, TransferAction};
 use std::error::Error;
-use tokio::time::{sleep, Duration};
+use tokio::time::{Duration, sleep};
 
 const NEAR_RPC_URL_LOCAL: &str = "http://127.0.0.1:3040";
 const NEAR_RPC_URL_REMOTE: &str = "https://archival-rpc.mainnet.near.org";
@@ -12,8 +12,14 @@ const NEAR_RPC_URL_REMOTE: &str = "https://archival-rpc.mainnet.near.org";
 #[tokio::test]
 async fn test_openapi_client() -> Result<(), Box<dyn Error>> {
     let (signer, mut sandbox_node, client_local, client_remote) = prepare_sandbox().await.unwrap();
-    let (sender_account_id, block_final_hash, base64_signed_tx, sent_tx_hash, executed_receipt_id, later_block_hash) =
-        prepare_blockchain(&signer, client_local.clone()).await?;
+    let (
+        sender_account_id,
+        block_final_hash,
+        base64_signed_tx,
+        sent_tx_hash,
+        executed_receipt_id,
+        later_block_hash,
+    ) = prepare_blockchain(&signer, client_local.clone()).await?;
 
     test_block(&client_local, block_final_hash.clone()).await?;
     test_status(&client_local).await?;
@@ -87,7 +93,10 @@ async fn test_block(client: &Client, block_hash: CryptoHash) -> Result<(), Box<d
         client.block(&payload_block).await?.into_inner();
     assert!(matches!(
         block,
-        client::types::JsonRpcResponseForRpcBlockResponseAndRpcBlockError::Variant0 { result: _, .. }
+        client::types::JsonRpcResponseForRpcBlockResponseAndRpcBlockError::Variant0 {
+            result: _,
+            ..
+        }
     ));
 
     println!("response for block: {:#?}", block);
@@ -117,7 +126,10 @@ async fn test_broadcast_async(
         .into_inner();
     assert!(matches!(
         broadcast_async,
-        client::types::JsonRpcResponseForCryptoHashAndRpcTransactionError::Variant0 { result: _, .. }
+        client::types::JsonRpcResponseForCryptoHashAndRpcTransactionError::Variant0 {
+            result: _,
+            ..
+        }
     ));
 
     println!("response for broadcast_async: {:#?}", broadcast_async);
@@ -174,7 +186,10 @@ async fn test_chunk(client: &Client, block_hash: CryptoHash) -> Result<(), Box<d
         client.chunk(&payload_chunk).await?.into_inner();
     assert!(matches!(
         chunk,
-        client::types::JsonRpcResponseForRpcChunkResponseAndRpcChunkError::Variant0 { result: _, .. }
+        client::types::JsonRpcResponseForRpcChunkResponseAndRpcChunkError::Variant0 {
+            result: _,
+            ..
+        }
     ));
 
     println!("response for chunk: {:#?}", chunk);
@@ -199,7 +214,10 @@ async fn test_gas_price_with_block(
         client.gas_price(&payload_gas_price).await?.into_inner();
     assert!(matches!(
         gas_price,
-        client::types::JsonRpcResponseForRpcGasPriceResponseAndRpcGasPriceError::Variant0 { result: _, .. }
+        client::types::JsonRpcResponseForRpcGasPriceResponseAndRpcGasPriceError::Variant0 {
+            result: _,
+            ..
+        }
     ));
 
     println!("response for gas_price with block: {:#?}", gas_price);
@@ -219,7 +237,10 @@ async fn test_gas_price_without_block(client: &Client) -> Result<(), Box<dyn Err
         client.gas_price(&payload_gas_price).await?.into_inner();
     assert!(matches!(
         gas_price,
-        client::types::JsonRpcResponseForRpcGasPriceResponseAndRpcGasPriceError::Variant0 { result: _, .. }
+        client::types::JsonRpcResponseForRpcGasPriceResponseAndRpcGasPriceError::Variant0 {
+            result: _,
+            ..
+        }
     ));
 
     println!("response for gas_price without block: {:#?}", gas_price);
@@ -370,7 +391,10 @@ async fn test_status(client: &Client) -> Result<(), Box<dyn Error>> {
         client.status(&payload_status).await?.into_inner();
     assert!(matches!(
         status,
-        client::types::JsonRpcResponseForRpcStatusResponseAndRpcStatusError::Variant0 { result: _, .. }
+        client::types::JsonRpcResponseForRpcStatusResponseAndRpcStatusError::Variant0 {
+            result: _,
+            ..
+        }
     ));
 
     println!("response for status: {:#?}", status);
@@ -439,7 +463,7 @@ async fn test_experimental_changes(
             changes_type: client::types::AccountChangesByBlockIdChangesType::AccountChanges,
             account_ids: vec![sender_account_id],
             block_id: client::types::BlockId::CryptoHash(block_hash.clone()),
-        }
+        },
     };
 
     let experimental_changes: client::types::JsonRpcResponseForRpcStateChangesInBlockResponseAndRpcStateChangesError = client.experimental_changes(&payload_experimental_changes).await?.into_inner();
@@ -494,7 +518,7 @@ async fn test_experimental_changes_in_block(
 
 async fn test_experimental_congestion_level(
     client: &Client,
-    block_hash: CryptoHash,//
+    block_hash: CryptoHash, //
 ) -> Result<(), Box<dyn Error>> {
     let payload_congestion_level = client::types::JsonRpcRequestForExperimentalCongestionLevel {
         id: String::from("dontcare"),
@@ -532,13 +556,17 @@ async fn test_experimental_genesis_config(client: &Client) -> Result<(), Box<dyn
         params: client::types::GenesisConfigRequest(())
     };
 
-    let genesis_config: client::types::JsonRpcResponseForGenesisConfigAndGenesisConfigError = client
-        .experimental_genesis_config(&payload_genesis_config)
-        .await?
-        .into_inner();
+    let genesis_config: client::types::JsonRpcResponseForGenesisConfigAndGenesisConfigError =
+        client
+            .experimental_genesis_config(&payload_genesis_config)
+            .await?
+            .into_inner();
     assert!(matches!(
         genesis_config,
-        client::types::JsonRpcResponseForGenesisConfigAndGenesisConfigError::Variant0 { result: _, .. }
+        client::types::JsonRpcResponseForGenesisConfigAndGenesisConfigError::Variant0 {
+            result: _,
+            ..
+        }
     ));
 
     println!("response for genesis_config: {:#?}", genesis_config);
@@ -654,7 +682,10 @@ async fn test_experimental_receipt(
         .into_inner();
     assert!(matches!(
         receipt,
-        client::types::JsonRpcResponseForRpcReceiptResponseAndRpcReceiptError::Variant0 { result: _, .. }
+        client::types::JsonRpcResponseForRpcReceiptResponseAndRpcReceiptError::Variant0 {
+            result: _,
+            ..
+        }
     ));
 
     println!("response for receipt: {:#?}", receipt);
@@ -798,7 +829,10 @@ async fn test_query_account(
         client.query(&payload_query_account).await?.into_inner();
     assert!(matches!(
         query_account,
-        client::types::JsonRpcResponseForRpcQueryResponseAndRpcQueryError::Variant0 { result: _, .. }
+        client::types::JsonRpcResponseForRpcQueryResponseAndRpcQueryError::Variant0 {
+            result: _,
+            ..
+        }
     ));
 
     println!("response for query_account: {:#?}", query_account);
@@ -827,10 +861,14 @@ async fn test_function_call(
         client.query(&payload_function_call).await?.into_inner();
     assert!(matches!(
         function_call,
-        client::types::JsonRpcResponseForRpcQueryResponseAndRpcQueryError::Variant0 { result: _, .. }
+        client::types::JsonRpcResponseForRpcQueryResponseAndRpcQueryError::Variant0 {
+            result: _,
+            ..
+        }
     ));
     if let client::types::JsonRpcResponseForRpcQueryResponseAndRpcQueryError::Variant0 {
-        result, ..
+        result,
+        ..
     } = &function_call
     {
         if let client::types::RpcQueryResponse::Variant3 { result, .. } = result {
@@ -877,16 +915,18 @@ async fn prepare_blockchain(
         },
     };
 
-    let access_key: client::types::JsonRpcResponseForRpcQueryResponseAndRpcQueryError = client_local
-        .query(&payload_query_access_key)
-        .await?
-        .into_inner();
+    let access_key: client::types::JsonRpcResponseForRpcQueryResponseAndRpcQueryError =
+        client_local
+            .query(&payload_query_access_key)
+            .await?
+            .into_inner();
     println!("response for access_key: {:#?}", access_key);
 
     let access_key_block_hash: CryptoHash;
     let access_key_nonce: u64;
     if let client::types::JsonRpcResponseForRpcQueryResponseAndRpcQueryError::Variant0 {
-        result, ..
+        result,
+        ..
     } = access_key
     {
         if let client::types::RpcQueryResponse::Variant4 {
@@ -984,7 +1024,8 @@ async fn prepare_blockchain(
     println!("response for block_final: {:#?}", block_final);
     let block_final_hash: CryptoHash;
     if let client::types::JsonRpcResponseForRpcBlockResponseAndRpcBlockError::Variant0 {
-        result, ..
+        result,
+        ..
     } = block_final
     {
         block_final_hash = result.header.hash;
@@ -998,7 +1039,8 @@ async fn prepare_blockchain(
         client_local.block(&payload_block_final).await?.into_inner();
     let later_block_hash: CryptoHash;
     if let client::types::JsonRpcResponseForRpcBlockResponseAndRpcBlockError::Variant0 {
-        result, ..
+        result,
+        ..
     } = later_block
     {
         later_block_hash = result.header.hash;

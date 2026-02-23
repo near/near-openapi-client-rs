@@ -127,6 +127,9 @@ pub mod types {"""
         types
     )
 
+    # Add #[non_exhaustive] to all public enums for forward compatibility
+    types = re.sub(r'\n(\s*)pub enum ', r'\n\1#[non_exhaustive]\n\1pub enum ', types)
+
     types_lib_rs = """//! This crate provides types for the Near OpenAPI specification.
 //!
 //! Used in [near-openapi-client](https://docs.rs/near-openapi-client/latest/near_openapi_client/)

@@ -399,9 +399,9 @@
 //!
 pub use near_openapi_types as types;
 #[allow(unused_imports)]
-use progenitor_client::{encode_path, ClientHooks, OperationInfo, RequestBuilderExt};
-#[allow(unused_imports)]
 pub use progenitor_client::{ByteStream, ClientInfo, Error, ResponseValue};
+#[allow(unused_imports)]
+use progenitor_client::{ClientHooks, OperationInfo, RequestBuilderExt, encode_path};
 #[derive(Clone, Debug)]
 #[doc = "Client for NEAR Protocol JSON RPC API\n\nVersion: 1.2.2"]
 pub struct Client {

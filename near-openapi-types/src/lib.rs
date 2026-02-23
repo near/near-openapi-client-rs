@@ -203,6 +203,7 @@ impl ::std::convert::From<&AccessKeyList> for AccessKeyList {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum AccessKeyPermission {
     FunctionCall(FunctionCallPermission),
     #[doc = "Grants full access to the account.\nNOTE: It's used to replace account-level public keys."]
@@ -274,6 +275,7 @@ impl ::std::convert::From<FunctionCallPermission> for AccessKeyPermission {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum AccessKeyPermissionView {
     FullAccess,
     FunctionCall {
@@ -348,6 +350,7 @@ impl ::std::convert::From<&AccessKeyView> for AccessKeyView {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum AccountChangesByBlockIdChangesType {
     #[serde(rename = "account_changes")]
     AccountChanges,
@@ -420,6 +423,7 @@ impl ::std::convert::TryFrom<::std::string::String> for AccountChangesByBlockIdC
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum AccountChangesByFinalityChangesType {
     #[serde(rename = "account_changes")]
     AccountChanges,
@@ -492,6 +496,7 @@ impl ::std::convert::TryFrom<::std::string::String> for AccountChangesByFinality
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum AccountChangesBySyncCheckpointChangesType {
     #[serde(rename = "account_changes")]
     AccountChanges,
@@ -1639,6 +1644,7 @@ impl ::std::convert::From<&ActionError> for ActionError {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum ActionErrorKind {
     #[doc = "Happens when CreateAccount action tries to create an account with account_id which is already exists in the storage"]
     AccountAlreadyExists { account_id: AccountId },
@@ -2141,6 +2147,7 @@ impl ::std::convert::From<InvalidAccessKeyError> for ActionErrorKind {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum ActionView {
     CreateAccount,
     DeployContract {
@@ -2652,6 +2659,7 @@ impl ::std::convert::From<&Self> for ActionView {
     thiserror::Error,
     strum_macros::Display,
 )]
+#[non_exhaustive]
 pub enum ActionsValidationError {
     #[doc = "The delete action must be a final action in transaction"]
     DeleteActionMustBeFinal,
@@ -2843,6 +2851,7 @@ impl ::std::convert::From<&AddKeyAction> for AddKeyAction {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum AllAccessKeyChangesByBlockIdChangesType {
     #[serde(rename = "all_access_key_changes")]
     AllAccessKeyChanges,
@@ -2915,6 +2924,7 @@ impl ::std::convert::TryFrom<::std::string::String> for AllAccessKeyChangesByBlo
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum AllAccessKeyChangesByFinalityChangesType {
     #[serde(rename = "all_access_key_changes")]
     AllAccessKeyChanges,
@@ -2987,6 +2997,7 @@ impl ::std::convert::TryFrom<::std::string::String> for AllAccessKeyChangesByFin
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum AllAccessKeyChangesBySyncCheckpointChangesType {
     #[serde(rename = "all_access_key_changes")]
     AllAccessKeyChanges,
@@ -3063,6 +3074,7 @@ impl ::std::convert::TryFrom<::std::string::String>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum AllGasKeyChangesByBlockIdChangesType {
     #[serde(rename = "all_gas_key_changes")]
     AllGasKeyChanges,
@@ -3135,6 +3147,7 @@ impl ::std::convert::TryFrom<::std::string::String> for AllGasKeyChangesByBlockI
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum AllGasKeyChangesByFinalityChangesType {
     #[serde(rename = "all_gas_key_changes")]
     AllGasKeyChanges,
@@ -3207,6 +3220,7 @@ impl ::std::convert::TryFrom<::std::string::String> for AllGasKeyChangesByFinali
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum AllGasKeyChangesBySyncCheckpointChangesType {
     #[serde(rename = "all_gas_key_changes")]
     AllGasKeyChanges,
@@ -3363,6 +3377,7 @@ impl ::std::convert::From<&BandwidthRequestBitmap> for BandwidthRequestBitmap {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum BandwidthRequests {
     V1(BandwidthRequestsV1),
 }
@@ -3811,6 +3826,7 @@ impl ::std::convert::From<&BlockHeaderView> for BlockHeaderView {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum BlockId {
     BlockHeight(u64),
     CryptoHash(CryptoHash),
@@ -3886,6 +3902,7 @@ impl ::std::convert::From<CryptoHash> for BlockId {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum BlockReference {
     #[serde(rename = "block_id")]
     BlockId(BlockId),
@@ -3974,6 +3991,7 @@ impl ::std::convert::From<&BlockStatusView> for BlockStatusView {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum CallFunctionByBlockIdRequestType {
     #[serde(rename = "call_function")]
     CallFunction,
@@ -4046,6 +4064,7 @@ impl ::std::convert::TryFrom<::std::string::String> for CallFunctionByBlockIdReq
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum CallFunctionByFinalityRequestType {
     #[serde(rename = "call_function")]
     CallFunction,
@@ -4118,6 +4137,7 @@ impl ::std::convert::TryFrom<::std::string::String> for CallFunctionByFinalityRe
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum CallFunctionBySyncCheckpointRequestType {
     #[serde(rename = "call_function")]
     CallFunction,
@@ -4709,6 +4729,7 @@ impl ::std::default::Default for CloudArchivalWriterConfig {
     thiserror::Error,
     strum_macros::Display,
 )]
+#[non_exhaustive]
 pub enum CompilationError {
     CodeDoesNotExist {
         account_id: AccountId,
@@ -4961,6 +4982,7 @@ impl ::std::convert::From<&CongestionInfoView> for CongestionInfoView {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ContractCodeChangesByBlockIdChangesType {
     #[serde(rename = "contract_code_changes")]
     ContractCodeChanges,
@@ -5033,6 +5055,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ContractCodeChangesByBlo
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ContractCodeChangesByFinalityChangesType {
     #[serde(rename = "contract_code_changes")]
     ContractCodeChanges,
@@ -5105,6 +5128,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ContractCodeChangesByFin
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ContractCodeChangesBySyncCheckpointChangesType {
     #[serde(rename = "contract_code_changes")]
     ContractCodeChanges,
@@ -5451,6 +5475,7 @@ impl ::std::convert::From<&CurrentEpochValidatorInfo> for CurrentEpochValidatorI
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum DataChangesByBlockIdChangesType {
     #[serde(rename = "data_changes")]
     DataChanges,
@@ -5523,6 +5548,7 @@ impl ::std::convert::TryFrom<::std::string::String> for DataChangesByBlockIdChan
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum DataChangesByFinalityChangesType {
     #[serde(rename = "data_changes")]
     DataChanges,
@@ -5595,6 +5621,7 @@ impl ::std::convert::TryFrom<::std::string::String> for DataChangesByFinalityCha
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum DataChangesBySyncCheckpointChangesType {
     #[serde(rename = "data_changes")]
     DataChanges,
@@ -6042,6 +6069,7 @@ impl ::std::convert::From<&DetailedDebugStatus> for DetailedDebugStatus {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum DeterministicAccountStateInit {
     V1(DeterministicAccountStateInitV1),
 }
@@ -6148,6 +6176,7 @@ impl ::std::convert::From<&DeterministicStateInitAction> for DeterministicStateI
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum Direction {
     Left,
     Right,
@@ -6577,6 +6606,7 @@ impl ::std::default::Default for EpochSyncConfig {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForGenesisConfigError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -6679,6 +6709,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForGenesisConfigError {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcBlockError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -6781,6 +6812,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcBlockError {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcChunkError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -6883,6 +6915,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcChunkError {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcClientConfigError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -6985,6 +7018,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcClientConfigError
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcGasPriceError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -7087,6 +7121,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcGasPriceError {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcLightClientNextBlockError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -7193,6 +7228,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcLightClientNextBl
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcLightClientProofError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -7297,6 +7333,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcLightClientProofE
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcMaintenanceWindowsError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -7403,6 +7440,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcMaintenanceWindow
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcNetworkInfoError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -7505,6 +7543,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcNetworkInfoError 
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcProtocolConfigError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -7607,6 +7646,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcProtocolConfigErr
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcQueryError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -7709,6 +7749,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcQueryError {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcReceiptError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -7811,6 +7852,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcReceiptError {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcSplitStorageInfoError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -7915,6 +7957,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcSplitStorageInfoE
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcStateChangesError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -8017,6 +8060,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcStateChangesError
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcStatusError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -8119,6 +8163,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcStatusError {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcTransactionError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -8221,6 +8266,7 @@ impl ::std::convert::From<InternalError> for ErrorWrapperForRpcTransactionError 
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "cause")]
+#[non_exhaustive]
 pub enum ErrorWrapperForRpcValidatorError {
     #[serde(rename = "REQUEST_VALIDATION_ERROR")]
     RequestValidationError(RpcRequestValidationErrorKind),
@@ -8492,6 +8538,7 @@ impl ::std::convert::From<&ExecutionOutcomeWithIdView> for ExecutionOutcomeWithI
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum ExecutionStatusView {
     #[doc = "The execution is pending or unknown."]
     Unknown,
@@ -9622,6 +9669,7 @@ impl ::std::default::Default for ExternalStorageConfig {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum ExternalStorageLocation {
     S3 {
         #[doc = "Location on S3."]
@@ -9892,6 +9940,7 @@ impl ::std::convert::From<&FinalExecutionOutcomeWithReceiptView>
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum FinalExecutionStatus {
     #[doc = "The execution has not yet started."]
     NotStarted,
@@ -9940,6 +9989,7 @@ impl ::std::convert::From<TxExecutionError> for FinalExecutionStatus {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum Finality {
     #[serde(rename = "optimistic")]
     Optimistic,
@@ -10206,6 +10256,7 @@ impl ::std::convert::From<&FunctionCallAction> for FunctionCallAction {
     thiserror::Error,
     strum_macros::Display,
 )]
+#[non_exhaustive]
 pub enum FunctionCallError {
     WasmUnknownError,
     #[serde(rename = "_EVMError")]
@@ -11101,6 +11152,7 @@ impl ::std::convert::From<()> for GenesisConfigRequest {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum GlobalContractDeployMode {
     #[doc = "Contract is deployed under its code hash.\nUsers will be able reference it by that hash.\nThis effectively makes the contract immutable."]
     CodeHash,
@@ -11188,6 +11240,7 @@ impl ::std::convert::TryFrom<::std::string::String> for GlobalContractDeployMode
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum GlobalContractIdentifier {
     CodeHash(CryptoHash),
     AccountId(AccountId),
@@ -11226,6 +11279,7 @@ impl ::std::convert::From<AccountId> for GlobalContractIdentifier {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum GlobalContractIdentifierView {
     CryptoHash(CryptoHash),
     AccountId(AccountId),
@@ -11853,6 +11907,7 @@ impl ::std::convert::From<AccountId> for GlobalContractIdentifierView {
     thiserror::Error,
     strum_macros::Display,
 )]
+#[non_exhaustive]
 pub enum HostError {
     #[doc = "String encoding is bad UTF-16 sequence"]
     #[serde(rename = "BadUTF16")]
@@ -11978,6 +12033,7 @@ impl ::std::convert::From<&Self> for HostError {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum InternalError {
     #[serde(rename = "INTERNAL_ERROR")]
     InternalError {
@@ -12126,6 +12182,7 @@ impl ::std::convert::From<&Self> for InternalError {
     thiserror::Error,
     strum_macros::Display,
 )]
+#[non_exhaustive]
 pub enum InvalidAccessKeyError {
     #[doc = "The access key identified by the `public_key` doesn't exist for the account"]
     AccessKeyNotFound {
@@ -12524,6 +12581,7 @@ impl ::std::convert::From<&Self> for InvalidAccessKeyError {
     thiserror::Error,
     strum_macros::Display,
 )]
+#[non_exhaustive]
 pub enum InvalidTxError {
     #[doc = "Happens if a wrong AccessKey used or AccessKey has not enough permissions"]
     InvalidAccessKeyError(InvalidAccessKeyError),
@@ -12731,6 +12789,7 @@ impl ::std::convert::From<&JsonRpcRequestForBlockEffects> for JsonRpcRequestForB
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForBlockEffectsMethod {
     #[serde(rename = "block_effects")]
     BlockEffects,
@@ -12803,6 +12862,7 @@ impl ::std::convert::TryFrom<::std::string::String> for JsonRpcRequestForBlockEf
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForBlockMethod {
     #[serde(rename = "block")]
     Block,
@@ -12923,6 +12983,7 @@ impl ::std::convert::From<&JsonRpcRequestForBroadcastTxAsync>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForBroadcastTxAsyncMethod {
     #[serde(rename = "broadcast_tx_async")]
     BroadcastTxAsync,
@@ -13043,6 +13104,7 @@ impl ::std::convert::From<&JsonRpcRequestForBroadcastTxCommit>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForBroadcastTxCommitMethod {
     #[serde(rename = "broadcast_tx_commit")]
     BroadcastTxCommit,
@@ -13161,6 +13223,7 @@ impl ::std::convert::From<&JsonRpcRequestForChanges> for JsonRpcRequestForChange
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForChangesMethod {
     #[serde(rename = "changes")]
     Changes,
@@ -13279,6 +13342,7 @@ impl ::std::convert::From<&JsonRpcRequestForChunk> for JsonRpcRequestForChunk {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForChunkMethod {
     #[serde(rename = "chunk")]
     Chunk,
@@ -13397,6 +13461,7 @@ impl ::std::convert::From<&JsonRpcRequestForClientConfig> for JsonRpcRequestForC
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForClientConfigMethod {
     #[serde(rename = "client_config")]
     ClientConfig,
@@ -13565,6 +13630,7 @@ impl ::std::convert::From<&JsonRpcRequestForExperimentalChangesInBlock>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForExperimentalChangesInBlockMethod {
     #[serde(rename = "EXPERIMENTAL_changes_in_block")]
     ExperimentalChangesInBlock,
@@ -13641,6 +13707,7 @@ impl ::std::convert::TryFrom<::std::string::String>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForExperimentalChangesMethod {
     #[serde(rename = "EXPERIMENTAL_changes")]
     ExperimentalChanges,
@@ -13763,6 +13830,7 @@ impl ::std::convert::From<&JsonRpcRequestForExperimentalCongestionLevel>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForExperimentalCongestionLevelMethod {
     #[serde(rename = "EXPERIMENTAL_congestion_level")]
     ExperimentalCongestionLevel,
@@ -13887,6 +13955,7 @@ impl ::std::convert::From<&JsonRpcRequestForExperimentalGenesisConfig>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForExperimentalGenesisConfigMethod {
     #[serde(rename = "EXPERIMENTAL_genesis_config")]
     ExperimentalGenesisConfig,
@@ -14011,6 +14080,7 @@ impl ::std::convert::From<&JsonRpcRequestForExperimentalLightClientBlockProof>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForExperimentalLightClientBlockProofMethod {
     #[serde(rename = "EXPERIMENTAL_light_client_block_proof")]
     ExperimentalLightClientBlockProof,
@@ -14137,6 +14207,7 @@ impl ::std::convert::From<&JsonRpcRequestForExperimentalLightClientProof>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForExperimentalLightClientProofMethod {
     #[serde(rename = "EXPERIMENTAL_light_client_proof")]
     ExperimentalLightClientProof,
@@ -14261,6 +14332,7 @@ impl ::std::convert::From<&JsonRpcRequestForExperimentalMaintenanceWindows>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForExperimentalMaintenanceWindowsMethod {
     #[serde(rename = "EXPERIMENTAL_maintenance_windows")]
     ExperimentalMaintenanceWindows,
@@ -14385,6 +14457,7 @@ impl ::std::convert::From<&JsonRpcRequestForExperimentalProtocolConfig>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForExperimentalProtocolConfigMethod {
     #[serde(rename = "EXPERIMENTAL_protocol_config")]
     ExperimentalProtocolConfig,
@@ -14509,6 +14582,7 @@ impl ::std::convert::From<&JsonRpcRequestForExperimentalReceipt>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForExperimentalReceiptMethod {
     #[serde(rename = "EXPERIMENTAL_receipt")]
     ExperimentalReceipt,
@@ -14631,6 +14705,7 @@ impl ::std::convert::From<&JsonRpcRequestForExperimentalSplitStorageInfo>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForExperimentalSplitStorageInfoMethod {
     #[serde(rename = "EXPERIMENTAL_split_storage_info")]
     ExperimentalSplitStorageInfo,
@@ -14755,6 +14830,7 @@ impl ::std::convert::From<&JsonRpcRequestForExperimentalTxStatus>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForExperimentalTxStatusMethod {
     #[serde(rename = "EXPERIMENTAL_tx_status")]
     ExperimentalTxStatus,
@@ -14879,6 +14955,7 @@ impl ::std::convert::From<&JsonRpcRequestForExperimentalValidatorsOrdered>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForExperimentalValidatorsOrderedMethod {
     #[serde(rename = "EXPERIMENTAL_validators_ordered")]
     ExperimentalValidatorsOrdered,
@@ -15001,6 +15078,7 @@ impl ::std::convert::From<&JsonRpcRequestForGasPrice> for JsonRpcRequestForGasPr
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForGasPriceMethod {
     #[serde(rename = "gas_price")]
     GasPrice,
@@ -15119,6 +15197,7 @@ impl ::std::convert::From<&JsonRpcRequestForGenesisConfig> for JsonRpcRequestFor
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForGenesisConfigMethod {
     #[serde(rename = "genesis_config")]
     GenesisConfig,
@@ -15237,6 +15316,7 @@ impl ::std::convert::From<&JsonRpcRequestForHealth> for JsonRpcRequestForHealth 
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForHealthMethod {
     #[serde(rename = "health")]
     Health,
@@ -15357,6 +15437,7 @@ impl ::std::convert::From<&JsonRpcRequestForLightClientProof>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForLightClientProofMethod {
     #[serde(rename = "light_client_proof")]
     LightClientProof,
@@ -15477,6 +15558,7 @@ impl ::std::convert::From<&JsonRpcRequestForMaintenanceWindows>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForMaintenanceWindowsMethod {
     #[serde(rename = "maintenance_windows")]
     MaintenanceWindows,
@@ -15595,6 +15677,7 @@ impl ::std::convert::From<&JsonRpcRequestForNetworkInfo> for JsonRpcRequestForNe
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForNetworkInfoMethod {
     #[serde(rename = "network_info")]
     NetworkInfo,
@@ -15715,6 +15798,7 @@ impl ::std::convert::From<&JsonRpcRequestForNextLightClientBlock>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForNextLightClientBlockMethod {
     #[serde(rename = "next_light_client_block")]
     NextLightClientBlock,
@@ -15837,6 +15921,7 @@ impl ::std::convert::From<&JsonRpcRequestForQuery> for JsonRpcRequestForQuery {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForQueryMethod {
     #[serde(rename = "query")]
     Query,
@@ -15955,6 +16040,7 @@ impl ::std::convert::From<&JsonRpcRequestForSendTx> for JsonRpcRequestForSendTx 
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForSendTxMethod {
     #[serde(rename = "send_tx")]
     SendTx,
@@ -16073,6 +16159,7 @@ impl ::std::convert::From<&JsonRpcRequestForStatus> for JsonRpcRequestForStatus 
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForStatusMethod {
     #[serde(rename = "status")]
     Status,
@@ -16191,6 +16278,7 @@ impl ::std::convert::From<&JsonRpcRequestForTx> for JsonRpcRequestForTx {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForTxMethod {
     #[serde(rename = "tx")]
     Tx,
@@ -16309,6 +16397,7 @@ impl ::std::convert::From<&JsonRpcRequestForValidators> for JsonRpcRequestForVal
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum JsonRpcRequestForValidatorsMethod {
     #[serde(rename = "validators")]
     Validators,
@@ -16408,6 +16497,7 @@ impl ::std::convert::TryFrom<::std::string::String> for JsonRpcRequestForValidat
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForArrayOfRangeOfUint64AndRpcMaintenanceWindowsError {
     Variant0 {
         id: ::std::string::String,
@@ -16479,6 +16569,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForArrayOfValidatorStakeViewAndRpcValidatorError {
     Variant0 {
         id: ::std::string::String,
@@ -16547,6 +16638,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForCryptoHashAndRpcTransactionError {
     Variant0 {
         id: ::std::string::String,
@@ -16613,6 +16705,7 @@ impl ::std::convert::From<&Self> for JsonRpcResponseForCryptoHashAndRpcTransacti
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForGenesisConfigAndGenesisConfigError {
     Variant0 {
         id: ::std::string::String,
@@ -16686,6 +16779,7 @@ impl ::std::convert::From<&Self> for JsonRpcResponseForGenesisConfigAndGenesisCo
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForNullableRpcHealthResponseAndRpcStatusError {
     Variant0 {
         id: ::std::string::String,
@@ -16752,6 +16846,7 @@ impl ::std::convert::From<&Self> for JsonRpcResponseForNullableRpcHealthResponse
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcBlockResponseAndRpcBlockError {
     Variant0 {
         id: ::std::string::String,
@@ -16818,6 +16913,7 @@ impl ::std::convert::From<&Self> for JsonRpcResponseForRpcBlockResponseAndRpcBlo
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcChunkResponseAndRpcChunkError {
     Variant0 {
         id: ::std::string::String,
@@ -16884,6 +16980,7 @@ impl ::std::convert::From<&Self> for JsonRpcResponseForRpcChunkResponseAndRpcChu
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcClientConfigResponseAndRpcClientConfigError {
     Variant0 {
         id: ::std::string::String,
@@ -16952,6 +17049,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcCongestionLevelResponseAndRpcChunkError {
     Variant0 {
         id: ::std::string::String,
@@ -17018,6 +17116,7 @@ impl ::std::convert::From<&Self> for JsonRpcResponseForRpcCongestionLevelRespons
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcGasPriceResponseAndRpcGasPriceError {
     Variant0 {
         id: ::std::string::String,
@@ -17084,6 +17183,7 @@ impl ::std::convert::From<&Self> for JsonRpcResponseForRpcGasPriceResponseAndRpc
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcLightClientBlockProofResponseAndRpcLightClientProofError {
     Variant0 {
         id: ::std::string::String,
@@ -17154,6 +17254,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcLightClientExecutionProofResponseAndRpcLightClientProofError {
     Variant0 {
         id: ::std::string::String,
@@ -17224,6 +17325,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcLightClientNextBlockResponseAndRpcLightClientNextBlockError {
     Variant0 {
         id: ::std::string::String,
@@ -17294,6 +17396,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcNetworkInfoResponseAndRpcNetworkInfoError {
     Variant0 {
         id: ::std::string::String,
@@ -17362,6 +17465,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcProtocolConfigResponseAndRpcProtocolConfigError {
     Variant0 {
         id: ::std::string::String,
@@ -17430,6 +17534,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcQueryResponseAndRpcQueryError {
     Variant0 {
         id: ::std::string::String,
@@ -17496,6 +17601,7 @@ impl ::std::convert::From<&Self> for JsonRpcResponseForRpcQueryResponseAndRpcQue
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcReceiptResponseAndRpcReceiptError {
     Variant0 {
         id: ::std::string::String,
@@ -17562,6 +17668,7 @@ impl ::std::convert::From<&Self> for JsonRpcResponseForRpcReceiptResponseAndRpcR
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcSplitStorageInfoResponseAndRpcSplitStorageInfoError {
     Variant0 {
         id: ::std::string::String,
@@ -17632,6 +17739,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcStateChangesInBlockByTypeResponseAndRpcStateChangesError {
     Variant0 {
         id: ::std::string::String,
@@ -17702,6 +17810,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcStateChangesInBlockResponseAndRpcStateChangesError {
     Variant0 {
         id: ::std::string::String,
@@ -17772,6 +17881,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcStatusResponseAndRpcStatusError {
     Variant0 {
         id: ::std::string::String,
@@ -17838,6 +17948,7 @@ impl ::std::convert::From<&Self> for JsonRpcResponseForRpcStatusResponseAndRpcSt
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcTransactionResponseAndRpcTransactionError {
     Variant0 {
         id: ::std::string::String,
@@ -17906,6 +18017,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum JsonRpcResponseForRpcValidatorResponseAndRpcValidatorError {
     Variant0 {
         id: ::std::string::String,
@@ -18377,6 +18489,7 @@ impl ::std::default::Default for LimitConfig {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum LogSummaryStyle {
     #[serde(rename = "plain")]
     Plain,
@@ -18488,6 +18601,7 @@ impl ::std::convert::From<&MerklePathItem> for MerklePathItem {
     PartialOrd,
     thiserror::Error,
 )]
+#[non_exhaustive]
 pub enum MethodResolveError {
     MethodEmptyName,
     MethodNotFound,
@@ -18624,6 +18738,7 @@ impl ::std::convert::From<&MissingTrieValue> for MissingTrieValue {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum MissingTrieValueContext {
     #[doc = "Missing trie value when reading from TrieIterator."]
     TrieIterator,
@@ -19042,6 +19157,7 @@ impl ::std::convert::From<&NextEpochValidatorInfo> for NextEpochValidatorInfo {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum NonDelegateAction {
     #[doc = "Create an (sub)account using a transaction `receiver_id` as an ID for\na new account ID must pass validation rules described here\n<https://nomicon.io/DataStructures/Account>."]
     CreateAccount(CreateAccountAction),
@@ -19438,6 +19554,7 @@ impl ::std::convert::From<&PeerInfoView> for PeerInfoView {
     PartialOrd,
     thiserror::Error,
 )]
+#[non_exhaustive]
 pub enum PrepareError {
     #[doc = "Error happened while serializing the module."]
     Serialization,
@@ -19552,6 +19669,7 @@ impl ::std::convert::TryFrom<::std::string::String> for PrepareError {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ProtocolVersionCheckConfig {
     Next,
     NextNext,
@@ -19832,6 +19950,7 @@ impl ::std::convert::From<&RangeOfUint64> for RangeOfUint64 {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum ReceiptEnumView {
     Action {
         actions: ::std::vec::Vec<ActionView>,
@@ -20089,6 +20208,7 @@ impl ::std::convert::From<&Self> for ReceiptEnumView {
     thiserror::Error,
     strum_macros::Display,
 )]
+#[non_exhaustive]
 pub enum ReceiptValidationError {
     #[doc = "The `predecessor_id` of a Receipt is not valid."]
     InvalidPredecessorId { account_id: ::std::string::String },
@@ -20250,6 +20370,7 @@ impl ::std::convert::From<&ReceiptView> for ReceiptView {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcBlockError {
     #[serde(rename = "UNKNOWN_BLOCK")]
     UnknownBlock(::serde_json::Map<::std::string::String, ::serde_json::Value>),
@@ -20319,6 +20440,7 @@ impl ::std::convert::From<::serde_json::Map<::std::string::String, ::serde_json:
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum RpcBlockRequest {
     #[serde(rename = "block_id")]
     BlockId(BlockId),
@@ -20509,6 +20631,7 @@ impl ::std::convert::From<&RpcBlockResponse> for RpcBlockResponse {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcChunkError {
     #[serde(rename = "INTERNAL_ERROR")]
     InternalError {
@@ -20576,6 +20699,7 @@ impl ::std::convert::From<::serde_json::Map<::std::string::String, ::serde_json:
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum RpcChunkRequest {
     BlockShardId {
         block_id: BlockId,
@@ -20684,6 +20808,7 @@ impl ::std::convert::From<&RpcChunkResponse> for RpcChunkResponse {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcClientConfigError {
     #[serde(rename = "INTERNAL_ERROR")]
     InternalError {
@@ -21589,6 +21714,7 @@ impl ::std::default::Default for RpcClientConfigResponse {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum RpcCongestionLevelRequest {
     BlockShardId {
         block_id: BlockId,
@@ -21695,6 +21821,7 @@ impl ::std::convert::From<&RpcCongestionLevelResponse> for RpcCongestionLevelRes
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcGasPriceError {
     #[serde(rename = "INTERNAL_ERROR")]
     InternalError {
@@ -22026,6 +22153,7 @@ impl ::std::convert::From<&RpcLightClientBlockProofResponse> for RpcLightClientB
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum RpcLightClientExecutionProofRequest {
     Variant0 {
         light_client_head: CryptoHash,
@@ -22072,6 +22200,7 @@ impl ::std::convert::From<&Self> for RpcLightClientExecutionProofRequest {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum RpcLightClientExecutionProofRequestVariant0Type {
     #[serde(rename = "transaction")]
     Transaction,
@@ -22148,6 +22277,7 @@ impl ::std::convert::TryFrom<::std::string::String>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum RpcLightClientExecutionProofRequestVariant1Type {
     #[serde(rename = "receipt")]
     Receipt,
@@ -22339,6 +22469,7 @@ impl ::std::convert::From<&RpcLightClientExecutionProofResponse>
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcLightClientNextBlockError {
     #[serde(rename = "INTERNAL_ERROR")]
     InternalError {
@@ -22652,6 +22783,7 @@ impl ::std::default::Default for RpcLightClientNextBlockResponse {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcLightClientProofError {
     #[serde(rename = "UNKNOWN_BLOCK")]
     UnknownBlock(::serde_json::Map<::std::string::String, ::serde_json::Value>),
@@ -22736,6 +22868,7 @@ impl ::std::convert::From<::serde_json::Map<::std::string::String, ::serde_json:
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcMaintenanceWindowsError {
     #[serde(rename = "INTERNAL_ERROR")]
     InternalError {
@@ -22821,6 +22954,7 @@ impl ::std::convert::From<&RpcMaintenanceWindowsRequest> for RpcMaintenanceWindo
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcNetworkInfoError {
     #[serde(rename = "INTERNAL_ERROR")]
     InternalError {
@@ -23046,6 +23180,7 @@ impl ::std::convert::From<&RpcPeerInfo> for RpcPeerInfo {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcProtocolConfigError {
     #[serde(rename = "UNKNOWN_BLOCK")]
     UnknownBlock(::serde_json::Map<::std::string::String, ::serde_json::Value>),
@@ -23113,6 +23248,7 @@ impl ::std::convert::From<::serde_json::Map<::std::string::String, ::serde_json:
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum RpcProtocolConfigRequest {
     #[serde(rename = "block_id")]
     BlockId(BlockId),
@@ -23974,6 +24110,7 @@ impl ::std::default::Default for RpcProtocolConfigResponse {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcQueryError {
     #[serde(rename = "NO_SYNCED_BLOCKS")]
     NoSyncedBlocks,
@@ -25148,6 +25285,7 @@ impl ::std::convert::From<&Self> for RpcQueryError {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum RpcQueryRequest {
     ViewAccountByBlockId {
         account_id: AccountId,
@@ -25378,6 +25516,7 @@ impl ::std::convert::From<&Self> for RpcQueryRequest {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum RpcQueryResponse {
     Variant0 {
         amount: NearToken,
@@ -25515,6 +25654,7 @@ impl ::std::convert::From<&Self> for RpcQueryResponse {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcReceiptError {
     #[serde(rename = "INTERNAL_ERROR")]
     InternalError {
@@ -25678,6 +25818,7 @@ impl ::std::convert::From<&RpcReceiptResponse> for RpcReceiptResponse {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcRequestValidationErrorKind {
     #[serde(rename = "METHOD_NOT_FOUND")]
     MethodNotFound { method_name: ::std::string::String },
@@ -25775,6 +25916,7 @@ impl ::std::convert::From<&RpcSendTransactionRequest> for RpcSendTransactionRequ
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcSplitStorageInfoError {
     #[serde(rename = "INTERNAL_ERROR")]
     InternalError {
@@ -25974,6 +26116,7 @@ impl ::std::default::Default for RpcSplitStorageInfoResponse {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcStateChangesError {
     #[serde(rename = "UNKNOWN_BLOCK")]
     UnknownBlock(::serde_json::Map<::std::string::String, ::serde_json::Value>),
@@ -26801,6 +26944,7 @@ impl ::std::convert::From<::serde_json::Map<::std::string::String, ::serde_json:
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum RpcStateChangesInBlockByTypeRequest {
     AccountChangesByBlockId {
         account_ids: ::std::vec::Vec<AccountId>,
@@ -27000,6 +27144,7 @@ impl ::std::convert::From<&RpcStateChangesInBlockByTypeResponse>
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum RpcStateChangesInBlockRequest {
     #[serde(rename = "block_id")]
     BlockId(BlockId),
@@ -27182,6 +27327,7 @@ impl ::std::convert::From<&RpcStateChangesInBlockResponse> for RpcStateChangesIn
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcStatusError {
     #[serde(rename = "NODE_IS_SYNCING")]
     NodeIsSyncing,
@@ -27553,6 +27699,7 @@ impl ::std::convert::From<&RpcStatusResponse> for RpcStatusResponse {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcTransactionError {
     #[serde(rename = "INVALID_TRANSACTION")]
     InvalidTransaction(::serde_json::Map<::std::string::String, ::serde_json::Value>),
@@ -27609,6 +27756,7 @@ impl ::std::convert::From<::serde_json::Map<::std::string::String, ::serde_json:
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum RpcTransactionResponse {
     Variant0 {
         final_execution_status: TxExecutionStatus,
@@ -27691,6 +27839,7 @@ impl ::std::convert::From<&Self> for RpcTransactionResponse {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum RpcTransactionStatusRequest {
     Variant0 {
         signed_tx_base64: SignedTransaction,
@@ -27783,6 +27932,7 @@ impl ::std::convert::From<&Self> for RpcTransactionStatusRequest {
     strum_macros::Display,
 )]
 #[serde(tag = "name", content = "info")]
+#[non_exhaustive]
 pub enum RpcValidatorError {
     #[serde(rename = "UNKNOWN_EPOCH")]
     UnknownEpoch,
@@ -27840,6 +27990,7 @@ impl ::std::convert::From<&Self> for RpcValidatorError {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum RpcValidatorRequest {
     #[serde(rename = "latest")]
     Latest,
@@ -28351,6 +28502,7 @@ impl ::std::fmt::Display for ShardId {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum ShardLayout {
     V0(ShardLayoutV0),
     V1(ShardLayoutV1),
@@ -28926,6 +29078,7 @@ impl ::std::convert::From<&SignedTransactionView> for SignedTransactionView {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum SingleAccessKeyChangesByBlockIdChangesType {
     #[serde(rename = "single_access_key_changes")]
     SingleAccessKeyChanges,
@@ -29000,6 +29153,7 @@ impl ::std::convert::TryFrom<::std::string::String> for SingleAccessKeyChangesBy
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum SingleAccessKeyChangesByFinalityChangesType {
     #[serde(rename = "single_access_key_changes")]
     SingleAccessKeyChanges,
@@ -29076,6 +29230,7 @@ impl ::std::convert::TryFrom<::std::string::String>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum SingleAccessKeyChangesBySyncCheckpointChangesType {
     #[serde(rename = "single_access_key_changes")]
     SingleAccessKeyChanges,
@@ -29152,6 +29307,7 @@ impl ::std::convert::TryFrom<::std::string::String>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum SingleGasKeyChangesByBlockIdChangesType {
     #[serde(rename = "single_gas_key_changes")]
     SingleGasKeyChanges,
@@ -29224,6 +29380,7 @@ impl ::std::convert::TryFrom<::std::string::String> for SingleGasKeyChangesByBlo
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum SingleGasKeyChangesByFinalityChangesType {
     #[serde(rename = "single_gas_key_changes")]
     SingleGasKeyChanges,
@@ -29296,6 +29453,7 @@ impl ::std::convert::TryFrom<::std::string::String> for SingleGasKeyChangesByFin
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum SingleGasKeyChangesBySyncCheckpointChangesType {
     #[serde(rename = "single_gas_key_changes")]
     SingleGasKeyChanges,
@@ -29612,6 +29770,7 @@ impl ::std::convert::From<&StakeAction> for StakeAction {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(tag = "type")]
+#[non_exhaustive]
 pub enum StateChangeCauseView {
     #[serde(rename = "not_writable_to_disk")]
     NotWritableToDisk,
@@ -29727,6 +29886,7 @@ impl ::std::convert::From<&Self> for StateChangeCauseView {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(tag = "type", content = "account_id")]
+#[non_exhaustive]
 pub enum StateChangeKindView {
     #[serde(rename = "account_touched")]
     AccountTouched(AccountId),
@@ -30152,6 +30312,7 @@ impl ::std::convert::From<&Self> for StateChangeKindView {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(untagged)]
+#[non_exhaustive]
 pub enum StateChangeWithCauseView {
     Variant0 {
         cause: StateChangeCauseView,
@@ -30344,6 +30505,7 @@ impl ::std::convert::From<&StateChangeWithCauseViewVariant0Change>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum StateChangeWithCauseViewVariant0Type {
     #[serde(rename = "account_update")]
     AccountUpdate,
@@ -30460,6 +30622,7 @@ impl ::std::convert::From<&StateChangeWithCauseViewVariant10Change>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum StateChangeWithCauseViewVariant10Type {
     #[serde(rename = "contract_code_deletion")]
     ContractCodeDeletion,
@@ -30576,6 +30739,7 @@ impl ::std::convert::From<&StateChangeWithCauseViewVariant1Change>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum StateChangeWithCauseViewVariant1Type {
     #[serde(rename = "account_deletion")]
     AccountDeletion,
@@ -30700,6 +30864,7 @@ impl ::std::convert::From<&StateChangeWithCauseViewVariant2Change>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum StateChangeWithCauseViewVariant2Type {
     #[serde(rename = "access_key_update")]
     AccessKeyUpdate,
@@ -30820,6 +30985,7 @@ impl ::std::convert::From<&StateChangeWithCauseViewVariant3Change>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum StateChangeWithCauseViewVariant3Type {
     #[serde(rename = "access_key_deletion")]
     AccessKeyDeletion,
@@ -30944,6 +31110,7 @@ impl ::std::convert::From<&StateChangeWithCauseViewVariant4Change>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum StateChangeWithCauseViewVariant4Type {
     #[serde(rename = "gas_key_update")]
     GasKeyUpdate,
@@ -31076,6 +31243,7 @@ impl ::std::convert::From<&StateChangeWithCauseViewVariant5Change>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum StateChangeWithCauseViewVariant5Type {
     #[serde(rename = "gas_key_nonce_update")]
     GasKeyNonceUpdate,
@@ -31196,6 +31364,7 @@ impl ::std::convert::From<&StateChangeWithCauseViewVariant6Change>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum StateChangeWithCauseViewVariant6Type {
     #[serde(rename = "gas_key_deletion")]
     GasKeyDeletion,
@@ -31320,6 +31489,7 @@ impl ::std::convert::From<&StateChangeWithCauseViewVariant7Change>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum StateChangeWithCauseViewVariant7Type {
     #[serde(rename = "data_update")]
     DataUpdate,
@@ -31440,6 +31610,7 @@ impl ::std::convert::From<&StateChangeWithCauseViewVariant8Change>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum StateChangeWithCauseViewVariant8Type {
     #[serde(rename = "data_deletion")]
     DataDeletion,
@@ -31560,6 +31731,7 @@ impl ::std::convert::From<&StateChangeWithCauseViewVariant9Change>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum StateChangeWithCauseViewVariant9Type {
     #[serde(rename = "contract_code_update")]
     ContractCodeUpdate,
@@ -31890,6 +32062,7 @@ impl ::std::convert::From<&StatusSyncInfo> for StatusSyncInfo {
     thiserror::Error,
     strum_macros::Display,
 )]
+#[non_exhaustive]
 pub enum StorageError {
     #[doc = "Key-value db internal failure"]
     StorageInternalError,
@@ -31941,6 +32114,7 @@ impl ::std::convert::From<MissingTrieValue> for StorageError {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum StorageGetMode {
     FlatStorage,
     Trie,
@@ -32177,6 +32351,7 @@ impl ::std::fmt::Display for StoreValue {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum SyncCheckpoint {
     #[serde(rename = "genesis")]
     Genesis,
@@ -32331,6 +32506,7 @@ impl ::std::default::Default for SyncConcurrency {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum SyncConfig {
     #[doc = "Syncs state from the peers without reading anything from external storage."]
     Peers,
@@ -32470,6 +32646,7 @@ impl ::std::convert::From<&Tier1ProxyView> for Tier1ProxyView {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum TrackedShardsConfig {
     #[doc = "Tracks no shards (light client)."]
     NoShards,
@@ -32614,6 +32791,7 @@ impl ::std::convert::From<&TransferToGasKeyAction> for TransferToGasKeyAction {
     thiserror::Error,
     strum_macros::Display,
 )]
+#[non_exhaustive]
 pub enum TxExecutionError {
     #[doc = "An error happened during Action execution"]
     ActionError(ActionError),
@@ -32700,6 +32878,7 @@ impl ::std::convert::From<InvalidTxError> for TxExecutionError {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum TxExecutionStatus {
     #[doc = "Transaction is waiting to be included into the block"]
     #[serde(rename = "NONE")]
@@ -33003,6 +33182,7 @@ impl ::std::convert::From<&ValidatorInfo> for ValidatorInfo {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[non_exhaustive]
 pub enum ValidatorKickoutReason {
     #[doc = "Deprecated"]
     #[serde(rename = "_UnusedSlashed")]
@@ -33162,6 +33342,7 @@ impl ::std::convert::From<&ValidatorStakeViewV1> for ValidatorStakeViewV1 {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ValidatorStakeViewValidatorStakeStructVersion {
     V1,
 }
@@ -33281,6 +33462,7 @@ impl ::std::convert::From<&Version> for Version {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewAccessKeyByBlockIdRequestType {
     #[serde(rename = "view_access_key")]
     ViewAccessKey,
@@ -33353,6 +33535,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewAccessKeyByBlockIdRe
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewAccessKeyByFinalityRequestType {
     #[serde(rename = "view_access_key")]
     ViewAccessKey,
@@ -33425,6 +33608,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewAccessKeyByFinalityR
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewAccessKeyBySyncCheckpointRequestType {
     #[serde(rename = "view_access_key")]
     ViewAccessKey,
@@ -33497,6 +33681,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewAccessKeyBySyncCheck
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewAccessKeyListByBlockIdRequestType {
     #[serde(rename = "view_access_key_list")]
     ViewAccessKeyList,
@@ -33569,6 +33754,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewAccessKeyListByBlock
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewAccessKeyListByFinalityRequestType {
     #[serde(rename = "view_access_key_list")]
     ViewAccessKeyList,
@@ -33641,6 +33827,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewAccessKeyListByFinal
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewAccessKeyListBySyncCheckpointRequestType {
     #[serde(rename = "view_access_key_list")]
     ViewAccessKeyList,
@@ -33717,6 +33904,7 @@ impl ::std::convert::TryFrom<::std::string::String>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewAccountByBlockIdRequestType {
     #[serde(rename = "view_account")]
     ViewAccount,
@@ -33789,6 +33977,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewAccountByBlockIdRequ
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewAccountByFinalityRequestType {
     #[serde(rename = "view_account")]
     ViewAccount,
@@ -33861,6 +34050,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewAccountByFinalityReq
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewAccountBySyncCheckpointRequestType {
     #[serde(rename = "view_account")]
     ViewAccount,
@@ -33933,6 +34123,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewAccountBySyncCheckpo
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewCodeByBlockIdRequestType {
     #[serde(rename = "view_code")]
     ViewCode,
@@ -34005,6 +34196,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewCodeByBlockIdRequest
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewCodeByFinalityRequestType {
     #[serde(rename = "view_code")]
     ViewCode,
@@ -34077,6 +34269,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewCodeByFinalityReques
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewCodeBySyncCheckpointRequestType {
     #[serde(rename = "view_code")]
     ViewCode,
@@ -34149,6 +34342,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewCodeBySyncCheckpoint
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewGasKeyByBlockIdRequestType {
     #[serde(rename = "view_gas_key")]
     ViewGasKey,
@@ -34221,6 +34415,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewGasKeyByBlockIdReque
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewGasKeyByFinalityRequestType {
     #[serde(rename = "view_gas_key")]
     ViewGasKey,
@@ -34293,6 +34488,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewGasKeyByFinalityRequ
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewGasKeyBySyncCheckpointRequestType {
     #[serde(rename = "view_gas_key")]
     ViewGasKey,
@@ -34365,6 +34561,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewGasKeyBySyncCheckpoi
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewGasKeyListByBlockIdRequestType {
     #[serde(rename = "view_gas_key_list")]
     ViewGasKeyList,
@@ -34437,6 +34634,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewGasKeyListByBlockIdR
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewGasKeyListByFinalityRequestType {
     #[serde(rename = "view_gas_key_list")]
     ViewGasKeyList,
@@ -34509,6 +34707,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewGasKeyListByFinality
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewGasKeyListBySyncCheckpointRequestType {
     #[serde(rename = "view_gas_key_list")]
     ViewGasKeyList,
@@ -34581,6 +34780,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewGasKeyListBySyncChec
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewGlobalContractCodeByAccountIdByBlockIdRequestType {
     #[serde(rename = "view_global_contract_code_by_account_id")]
     ViewGlobalContractCodeByAccountId,
@@ -34661,6 +34861,7 @@ impl ::std::convert::TryFrom<::std::string::String>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewGlobalContractCodeByAccountIdByFinalityRequestType {
     #[serde(rename = "view_global_contract_code_by_account_id")]
     ViewGlobalContractCodeByAccountId,
@@ -34741,6 +34942,7 @@ impl ::std::convert::TryFrom<::std::string::String>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewGlobalContractCodeByAccountIdBySyncCheckpointRequestType {
     #[serde(rename = "view_global_contract_code_by_account_id")]
     ViewGlobalContractCodeByAccountId,
@@ -34823,6 +35025,7 @@ impl ::std::convert::TryFrom<::std::string::String>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewGlobalContractCodeByBlockIdRequestType {
     #[serde(rename = "view_global_contract_code")]
     ViewGlobalContractCode,
@@ -34897,6 +35100,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewGlobalContractCodeBy
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewGlobalContractCodeByFinalityRequestType {
     #[serde(rename = "view_global_contract_code")]
     ViewGlobalContractCode,
@@ -34973,6 +35177,7 @@ impl ::std::convert::TryFrom<::std::string::String>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewGlobalContractCodeBySyncCheckpointRequestType {
     #[serde(rename = "view_global_contract_code")]
     ViewGlobalContractCode,
@@ -35049,6 +35254,7 @@ impl ::std::convert::TryFrom<::std::string::String>
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewStateByBlockIdRequestType {
     #[serde(rename = "view_state")]
     ViewState,
@@ -35121,6 +35327,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewStateByBlockIdReques
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewStateByFinalityRequestType {
     #[serde(rename = "view_state")]
     ViewState,
@@ -35193,6 +35400,7 @@ impl ::std::convert::TryFrom<::std::string::String> for ViewStateByFinalityReque
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum ViewStateBySyncCheckpointRequestType {
     #[serde(rename = "view_state")]
     ViewState,
@@ -35508,6 +35716,7 @@ impl ::std::default::Default for VmConfigView {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum VmKind {
     #[doc = "Wasmer 0.17.x VM. Gone now."]
     Wasmer0,
@@ -35654,6 +35863,7 @@ impl ::std::convert::TryFrom<::std::string::String> for VmKind {
     PartialEq,
     PartialOrd,
 )]
+#[non_exhaustive]
 pub enum WasmTrap {
     #[doc = "An `unreachable` opcode was executed."]
     Unreachable,
@@ -35812,8 +36022,8 @@ pub mod defaults {
     pub(super) fn chunk_header_view_validator_reward() -> super::NearToken {
         super::NearToken::from_yoctonear(0)
     }
-    pub(super) fn cloud_archival_writer_config_polling_interval(
-    ) -> super::DurationAsStdSchemaProvider {
+    pub(super) fn cloud_archival_writer_config_polling_interval()
+    -> super::DurationAsStdSchemaProvider {
         super::DurationAsStdSchemaProvider {
             nanos: 0_i32,
             secs: 1_i64,
@@ -35856,8 +36066,8 @@ pub mod defaults {
             version: 0_u32,
         })
     }
-    pub(super) fn limit_config_account_id_validity_rules_version(
-    ) -> super::AccountIdValidityRulesVersion {
+    pub(super) fn limit_config_account_id_validity_rules_version()
+    -> super::AccountIdValidityRulesVersion {
         super::AccountIdValidityRulesVersion(0_u8)
     }
     pub(super) fn rpc_send_transaction_request_wait_until() -> super::TxExecutionStatus {
@@ -35869,8 +36079,8 @@ pub mod defaults {
     pub(super) fn rpc_transaction_status_request_variant1_wait_until() -> super::TxExecutionStatus {
         super::TxExecutionStatus::ExecutedOptimistic
     }
-    pub(super) fn runtime_config_view_dynamic_resharding_config(
-    ) -> super::DynamicReshardingConfigView {
+    pub(super) fn runtime_config_view_dynamic_resharding_config()
+    -> super::DynamicReshardingConfigView {
         super::DynamicReshardingConfigView {
             max_number_of_shards: 999999999999999_u64,
             memory_usage_threshold: 999999999999999_u64,

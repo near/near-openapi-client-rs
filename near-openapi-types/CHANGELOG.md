@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.0](https://github.com/near/near-openapi-client-rs/compare/near-openapi-types-v0.7.0...near-openapi-types-v0.8.0) - 2026-03-04
+
+### Fixed
+
+- regenerate types from Dec 23 OpenAPI spec ([#41](https://github.com/near/near-openapi-client-rs/pull/41))
+
 ## [0.7.0](https://github.com/PolyProgrammist/near-openapi-client/compare/near-openapi-types-v0.6.0...near-openapi-types-v0.7.0) - 2025-12-18
 
 ### Fixed

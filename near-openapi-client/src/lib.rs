@@ -20,7 +20,7 @@
 
 //!Add near-openapi-client to your project dependencies:
 
-//!```
+//!```sh
 
 //!cargo add near-openapi-client
 
@@ -30,17 +30,19 @@
 
 //!Use the client to get latest block info:
 
-//!```rust
+//!```rust,no_run
 
 //!use near_openapi_client as client;
 
 //!
 
+//!# async fn example() -> Result<(), Box<dyn std::error::Error>> {
+
 //!// Setup client
 
 //!const NEAR_RPC_URL_REMOTE: &str = "https://archival-rpc.mainnet.near.org";
 
-//!let client_remote = client::Client::new(NEAR_RPC_URL_LOCAL);
+//!let client_remote = client::Client::new(NEAR_RPC_URL_REMOTE);
 
 //!
 
@@ -62,11 +64,15 @@
 
 //!// Make the request, get the response
 
-//!let block_final: client::types::JsonRpcResponseForRpcBlockResponseAndRpcError =
+//!let block_final: client::types::JsonRpcResponseForRpcBlockResponseAndRpcBlockError =
 
-//!    client_local.block(&payload_block_final).await?.into_inner();
+//!    client_remote.block(&payload_block_final).await?.into_inner();
 
 //!println!("block_final: {:#?}", block_final);
+
+//!# Ok(())
+
+//!# }
 
 //!```
 
@@ -80,7 +86,7 @@
 
 //!
 
-//!```
+//!```text
 
 //!response for block_final: Variant0 {
 

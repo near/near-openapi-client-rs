@@ -23,4 +23,4 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           title: regenerate client
-          token: ${{ secrets.RELEAZE_PLZ_GITHUB_TOKEN }}
+          token: ${{ secrets.NEARPROTOCOL_CI_PR_ACCESS }}

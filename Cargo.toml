@@ -2,7 +2,7 @@
 version = "0.8.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/polyprogrammist/near-openapi-client"
+repository = "https://github.com/near/near-openapi-client-rs"
 
 [workspace]
 members = ["near-openapi-client", "near-openapi-types"]
